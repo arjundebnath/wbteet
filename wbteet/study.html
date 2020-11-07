@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEET Platform</title>
+    <script language="JavaScript" type="text/javascript" src="./assets/js/jquery.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./assets/bootstrap/js/bootstrap.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./assets/js/functions.js"></script>
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/icofont/icofont.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="alert alert-dismissible alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4 class="alert-heading"><i class="icofont-bullhorn"></i> Warning!</h4>
+        <p class="mb-0">All our contents are free for everyone to use, don’t try to copy/sell them without license.</p>
+    </div>
+    <section>
+        <div class='container'>
+            <div class='row'>
+                <div class='col px-0 px-md-3 d-flex justify-content-around'>
+                    <button class="btn btn-block btn-light mt-2 active-feature-btn" onclick="changeFeature(this);"
+                        data-target="#feature-carousel" data-slide-to="0"><i class="icofont-book-alt"></i>
+                        Study</button>
+                    <button class="btn btn-block btn-light" onclick="changeFeature(this);"
+                        data-target="#feature-carousel" data-slide-to="1"><i class="icofont-prescription"></i>
+                        Exam</button>
+                    <button class="btn btn-block btn-light" onclick="changeFeature(this);"
+                        data-target="#feature-carousel" data-slide-to="2"><i class="icofont-ui-video-play"></i>
+                        Video</button>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col px-0 px-md-3'>
+                    <div id="feature-carousel" class="carousel slide" data-interval="false">
+                        <div class="carousel-inner">
+                            <div id='study-tab' class="carousel-item active">
+                                <div class='card'>
+                                    <div class='card-header'>
+                                        Question-answer study books
+                                    </div>
+                                    <div class='card-body px-1 px-md-3'>
+                                        <div class="form-check">
+                                            <input class="form-check-input" onchange="changeClassBooks('012')"
+                                                type="radio" name="classcode" id="012" value="012" checked>
+                                            <label class="form-check-label text-muted" for="012">
+                                                Class-XII (Science)
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" onchange="changeClassBooks('011')"
+                                                type="radio" name="classcode" id="011" value="011">
+                                            <label class="form-check-label text-muted" for="011">
+                                                Class-XI (Science)
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" onchange="changeClassBooks('010')"
+                                                type="radio" name="classcode" id="010" value="010">
+                                            <label class="form-check-label text-muted" for="010">
+                                                Class-X (Science)
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" onchange="changeClassBooks('009')"
+                                                type="radio" name="classcode" id="009" value="009">
+                                            <label class="form-check-label text-muted" for="009">
+                                                Class-IX (Science)
+                                            </label>
+                                        </div>
+                                        <hr class="mt-0">
+                                        <div id='all-class-books-container'>
+                                            <div class='container-fluid books-shelf-012'>
+                                                <div class='row'>
+                                                    <div class='col-6 col-md-3'>
+                                                        <div onclick="openBook('01200');"
+                                                            class="bg-navy text-muted d-flex flex-column justify-content-center align-items-center p-3 p-md-5">
+                                                            <i class="icofont-volleyball-alt icofont-2x text-light"></i>
+                                                            <span class="subject-font">Physics</span>
+                                                            <span class="subject-font">XII</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class='col-6 col-md-3'>
+                                                        <div onclick="openBook('01201');"
+                                                            class="bg-navy text-muted d-flex flex-column justify-content-center align-items-center p-3 p-md-5">
+                                                            <i class="icofont-molecule icofont-2x text-light"></i>
+                                                            <span class="subject-font">Chemistry</span>
+                                                            <span class="subject-font">XII</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class='col-6 col-md-3 mt-2 mt-md-0'>
+                                                        <div onclick="openBook('01202')"
+                                                            class="bg-navy text-muted d-flex flex-column justify-content-center align-items-center p-3 p-md-5">
+                                                            <i class="icofont-square-root icofont-2x text-light"></i>
+                                                            <span class="subject-font">Math</span>
+                                                            <span class="subject-font">XII</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class='col-6 col-md-3 mt-2 mt-md-0'>
+                                                        <div onclick="openBook('01203');"
+                                                            class="bg-navy text-muted d-flex flex-column justify-content-center align-items-center p-3 p-md-5">
+                                                            <i class="icofont-dna icofont-2x text-light"></i>
+                                                            <span class="subject-font">Biology</span>
+                                                            <span class="subject-font">XII</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class='container-fluid books-shelf-011 d-none'>
+                                                <div class='row'>
+                                                    <div class='col-6 col-md-3'>
+                                                        <div
+                                                            class="bg-navy text-muted d-flex flex-column justify-content-center align-items-center p-3 p-md-5">
+                                                            <i class="icofont-runner-alt-1 icofont-2x text-light"></i>
+                                                            <span class="subject-font">Physics</span>
+                                                            <span class="subject-font">XI</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class='col-6 col-md-3'>
+                                                        <div
+                                                            class="bg-navy text-muted d-flex flex-column justify-content-center align-items-center p-3 p-md-5">
+                                                            <i class="icofont-electron icofont-2x text-light"></i>
+                                                            <span class="subject-font">Chemistry</span>
+                                                            <span class="subject-font">XI</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class='col-6 col-md-3 mt-2 mt-md-0'>
+                                                        <div class="bg-navy text-muted d-flex flex-column justify-content-center align-items-center p-3 p-md-5"
+                                                            onclick="showBodyBlock('solutionbook-block', 'math-xii')">
+                                                            <i class="icofont-compass-alt-4 icofont-2x text-light"></i>
+                                                            <span class="subject-font">Math</span>
+                                                            <span class="subject-font">XI</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class='col-6 col-md-3 mt-2 mt-md-0'>
+                                                        <div
+                                                            class="bg-navy text-muted d-flex flex-column justify-content-center align-items-center p-3 p-md-5">
+                                                            <i class="icofont-microscope icofont-2x text-light"></i>
+                                                            <span class="subject-font">Biology</span>
+                                                            <span class="subject-font">XI</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class='container-fluid books-shelf-010 d-none'>
+                                                <div class='row'>
+                                                    <div class='col-6 col-md-3'>
+                                                        <div
+                                                            class="bg-navy text-muted d-flex flex-column justify-content-center align-items-center p-3 p-md-5">
+                                                            <i class="icofont-cycling icofont-2x text-light"></i>
+                                                            <span class="subject-font">ভৌতবিজ্ঞান</span>
+                                                            <span class="subject-font">X</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class='col-6 col-md-3 mt-md-0'>
+                                                        <div class="bg-navy text-muted d-flex flex-column justify-content-center align-items-center p-3 p-md-5"
+                                                            onclick="showBodyBlock('solutionbook-block', 'math-xii')">
+                                                            <i
+                                                                class="icofont-ruler-compass-alt icofont-2x text-light"></i>
+                                                            <span class="subject-font">গণিত</span>
+                                                            <span class="subject-font">X</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class='col-6 col-md-3 mt-2 mt-md-0'>
+                                                        <div
+                                                            class="bg-navy text-muted d-flex flex-column justify-content-center align-items-center p-3 p-md-5">
+                                                            <i class="icofont-autism icofont-2x text-light"></i>
+                                                            <span class="subject-font">জীবনবিজ্ঞান</span>
+                                                            <span class="subject-font">X</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class='container-fluid books-shelf-009 d-none'>
+                                                <div class='row'>
+                                                    <div class='col-6 col-md-3'>
+                                                        <div
+                                                            class="bg-navy text-muted d-flex flex-column justify-content-center align-items-center p-3 p-md-5">
+                                                            <i class="icofont-test-tube-alt icofont-2x text-light"></i>
+                                                            <span class="subject-font">ভৌতবিজ্ঞান</span>
+                                                            <span class="subject-font">IX</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class='col-6 col-md-3 mt-md-0'>
+                                                        <div class="bg-navy text-light d-flex flex-column justify-content-center align-items-center p-3 p-md-5"
+                                                            onclick="showBodyBlock('solutionbook-block', 'math-xii')">
+                                                            <i class="icofont-instrument icofont-2x text-light"></i>
+                                                            <span class="subject-font">গণিত</span>
+                                                            <span class="subject-font">IX</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class='col-6 col-md-3 mt-2 mt-md-0'>
+                                                        <div
+                                                            class="bg-navy text-muted d-flex flex-column justify-content-center align-items-center p-3 p-md-5">
+                                                            <i
+                                                                class="icofont-stethoscope-alt icofont-2x text-light"></i>
+                                                            <span class="subject-font">জীবনবিজ্ঞান</span>
+                                                            <span class="subject-font">IX</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div id="open-book-container" class='container-fluid d-none'
+                                            style="background: beige;">
+                                            <div class="row">
+                                                <div id='book-controler-panel' class="col d-flex align-items-end">
+                                                    <i class="icofont-navigation-menu" data-indexpanelwidth='1'
+                                                        onclick="toggleIndexPanel(this);"></i>
+                                                    <p id="subject-title" class="mb-0 mr-auto ml-5"></p>
+                                                    <i class="icofont-color-bucket icofont-2x"
+                                                        onclick="colorChange();"></i>
+                                                    <i class="icofont-expand ml-5"></i>
+                                                </div>
+                                            </div>
+                                            <div class="row position-relative">
+                                                <div id='book-index-panel' class="col-auto position-absolute p-0"
+                                                    style="background: beige;">
+                                                    <ul class="list-group"></ul>
+                                                </div>
+                                                <div id='book-page-panel' class="col">
+                                                    Book container sjh sdldjs sldj sj sdsjkldjsl jsljdl s jj
+                                                    djskldklsjdlsk j skldjsk jd slkdsjdlk sdjslk dlkj sj ldjslkds ds
+                                                    hdsjlds
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id='exam-tab' class="carousel-item">
+                                <div class='card'>
+                                    <div class='card-header'>
+                                        Mock test
+                                    </div>
+                                    <div class='card-body'>
+                                    </div>
+                                    <div class='card-footer'>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id='video-tab' class="carousel-item">
+                                <div class='card'>
+                                    <div class='card-header'>
+                                        Video materials
+                                    </div>
+                                    <div class='card-body'>
+                                    </div>
+                                    <div class='card-footer'>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
